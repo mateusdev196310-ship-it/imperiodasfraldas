@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Império das Fraldas - Produtos Infantis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/LOGO - IMPERIO DAS FRALDAS 4.jpg" alt="Império das Fraldas">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+          <div class="container">
+             <div class="hero-content">
+                     <h1>Bem-vindo ao <span>Império das Fraldas</span></h1>
+                     <p>Tudo para o conforto e alegria do seu bebê!</p>
+                     <div class="buttons">
+                         <a href="#produtos" class="btn btn-primary" id="btn-ver-produtos">Ver Produtos</a>
+                         <a href="#contato" class="btn btn-outline" id="btn-fale-conosco">Fale Conosco</a>
+                     </div>
+                 </div>
+             <div class="hero-image">
+                 <img src="img/imagmeprincipal.png" alt="Bebê feliz">
+                <div class="floating-clouds">
+                    <div class="cloud cloud-1"></div>
+                    <div class="cloud cloud-2"></div>
+                    <div class="cloud cloud-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos" class="produtos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Produtos</h2>
+                <p>Conheça nossa linha completa para o cuidado do seu bebê</p>
+            </div>
+            
+            <div class="catalogo-tabs">
+                <div class="tabs-container">
+                    <button class="tab-btn active" data-tab="fraldas-higiene">
+                        <i class="fas fa-baby"></i>
+                        <span>Fraldas e Higiene</span>
+                    </button>
+                    <button class="tab-btn" data-tab="perfumaria">
+                        <i class="fas fa-pump-soap"></i>
+                        <span>Perfumaria</span>
+                    </button>
+                    <button class="tab-btn" data-tab="alimentacao">
+                        <i class="fas fa-baby-bottle"></i>
+                        <span>Alimentação</span>
+                    </button>
+                    <button class="tab-btn" data-tab="acessorios">
+                        <i class="fas fa-baby-carriage"></i>
+                        <span>Acessórios</span>
+                    </button>
+                    <button class="tab-btn" data-tab="utensilios">
+                        <i class="fas fa-utensils"></i>
+                        <span>Utensílios</span>
+                    </button>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- Conteúdo da aba Fraldas e Higiene -->
+                    <div class="tab-pane active" id="fraldas-higiene">
+                        <h3 class="categoria-titulo">Fraldas e Higiene</h3>
+                        <div class="produtos-grid">
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="img/fralda_p.png" alt="Fralda Infantil">
+                                </div>
+                                <h4>Fralda Infantil</h4>
+                                <p>Diversos tamanhos</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="img/fralda_geriatrica.png" alt="Fralda Geriátrica">
+                                </div>
+                                <h4>Fralda Geriátrica</h4>
+                                <p>Conforto e proteção</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Absorventes" alt="Absorventes">
+                                </div>
+                                <h4>Absorventes</h4>
+                                <p>Diversos tipos</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Toalhas+Umedecidas" alt="Toalhas Umedecidas">
+                                </div>
+                                <h4>Toalhas Umedecidas</h4>
+                                <p>Suaves para a pele</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conteúdo da aba Perfumaria -->
+                    <div class="tab-pane" id="perfumaria">
+                        <h3 class="categoria-titulo">Perfumaria</h3>
+                        <div class="produtos-grid">
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Colônias" alt="Colônias">
+                                </div>
+                                <h4>Colônias</h4>
+                                <p>Fragrâncias suaves</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Loções" alt="Loções">
+                                </div>
+                                <h4>Loções</h4>
+                                <p>Hidratação para bebês</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Óleos" alt="Óleos">
+                                </div>
+                                <h4>Óleos</h4>
+                                <p>Para massagem e hidratação</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conteúdo da aba Alimentação -->
+                    <div class="tab-pane" id="alimentacao">
+                        <h3 class="categoria-titulo">Alimentação</h3>
+                        <div class="produtos-grid">
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Leite+em+Pó" alt="Leite em Pó">
+                                </div>
+                                <h4>Leite em Pó</h4>
+                                <p>Fórmulas infantis</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Leite+Especial" alt="Leite Especial">
+                                </div>
+                                <h4>Leite Especial</h4>
+                                <p>Para necessidades específicas</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Composto+Lácteo" alt="Composto Lácteo">
+                                </div>
+                                <h4>Composto Lácteo</h4>
+                                <p>Para crianças em crescimento</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conteúdo da aba Acessórios -->
+                    <div class="tab-pane" id="acessorios">
+                        <h3 class="categoria-titulo">Acessórios</h3>
+                        <div class="produtos-grid">
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Trocadores" alt="Trocadores Descartáveis">
+                                </div>
+                                <h4>Trocadores Descartáveis</h4>
+                                <p>Práticos e higiênicos</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Termômetro" alt="Termômetro">
+                                </div>
+                                <h4>Termômetro</h4>
+                                <p>Digital e preciso</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Kit+Higiene" alt="Kit Higiene">
+                                </div>
+                                <h4>Kit Higiene</h4>
+                                <p>Escova, pente e tesoura</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Aspirador+Nasal" alt="Aspirador Nasal">
+                                </div>
+                                <h4>Aspirador Nasal</h4>
+                                <p>Limpeza segura</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conteúdo da aba Utensílios -->
+                    <div class="tab-pane" id="utensilios">
+                        <h3 class="categoria-titulo">Utensílios</h3>
+                        <div class="produtos-grid">
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Mamadeiras" alt="Mamadeiras">
+                                </div>
+                                <h4>Mamadeiras</h4>
+                                <p>Diversos tamanhos</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Copos+Treinamento" alt="Copos de Treinamento">
+                                </div>
+                                <h4>Copos de Treinamento</h4>
+                                <p>Transição segura</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Kit+Refeição" alt="Kit Refeição">
+                                </div>
+                                <h4>Kit Refeição</h4>
+                                <p>Pratos e talheres infantis</p>
+                            </div>
+                            <div class="produto-item">
+                                <div class="produto-img">
+                                    <img src="https://via.placeholder.com/200x200?text=Chupetas" alt="Chupetas">
+                                </div>
+                                <h4>Chupetas</h4>
+                                <p>Ortodônticas</p>
+                            </div>
+                        </div>
+                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destaque" class="destaque">
+        <div class="container">
+            <div class="destaque-content">
+                <h2>Vantagens de Comprar Conosco</h2>
+                <div class="destaque-items">
+                    <div class="destaque-item">
+                    <div class="destaque-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Entregamos em toda a cidade</p>
+                    <a href="#contato" class="btn-saiba-mais">Saiba mais</a>
+                </div>
+                <div class="destaque-item">
+                    <div class="destaque-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Qualidade Premium</h3>
+                    <p>Produtos selecionados</p>
+                    <a href="#contato" class="btn-saiba-mais">Saiba mais</a>
+                </div>
+                <div class="destaque-item">
+                    <div class="destaque-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Melhores Preços</h3>
+                    <p>Promoções imperdíveis</p>
+                    <a href="#contato" class="btn-saiba-mais">Saiba mais</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre Nós</h2>
+                <p>Conheça nossa história</p>
+            </div>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <p>O <strong>Império das Fraldas</strong> é uma loja especializada em produtos para bebês, oferecendo uma ampla variedade de itens de qualidade para o cuidado e conforto dos pequenos.</p>
+                    <p>Nossa missão é proporcionar aos pais produtos confiáveis e de alta qualidade para o bem-estar de seus filhos, com atendimento personalizado e preços justos.</p>
+                    <div class="valores">
+                        <div class="valor">
+                            <i class="fas fa-heart valor-icon"></i>
+                            <h4>Carinho</h4>
+                        </div>
+                        <div class="valor">
+                            <i class="fas fa-shield-alt valor-icon"></i>
+                            <h4>Segurança</h4>
+                        </div>
+                        <div class="valor">
+                            <i class="fas fa-star valor-icon"></i>
+                            <h4>Qualidade</h4>
+                        </div>
+                        <div class="valor">
+                            <i class="fas fa-smile-beam valor-icon"></i>
+                            <h4>Felicidade</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="sobre-ilustracao">
+                    <svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="#1a56db" opacity="0.8">
+                            <!-- Família estilizada -->
+                            <circle cx="125" cy="70" r="30" fill="#1a56db" opacity="0.7"/>
+                            <circle cx="85" cy="90" r="25" fill="#1a56db" opacity="0.7"/>
+                            <circle cx="165" cy="90" r="25" fill="#1a56db" opacity="0.7"/>
+                            <circle cx="125" cy="130" r="15" fill="#1a56db" opacity="0.7"/>
+                            <!-- Elementos decorativos -->
+                            <circle cx="50" cy="50" r="8" fill="#fbbf24" opacity="0.6"/>
+                            <circle cx="200" cy="50" r="8" fill="#fbbf24" opacity="0.6"/>
+                            <circle cx="50" cy="200" r="8" fill="#fbbf24" opacity="0.6"/>
+                            <circle cx="200" cy="200" r="8" fill="#fbbf24" opacity="0.6"/>
+                            <path d="M125,180 Q165,150 205,180" stroke="#1a56db" stroke-width="3" fill="none"/>
+                            <path d="M125,180 Q85,150 45,180" stroke="#1a56db" stroke-width="3" fill="none"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="localizacao" class="localizacao">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossa Localização</h2>
+                <p>Venha nos visitar</p>
+            </div>
+            <div class="mapa-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.3307307711647!2d-40.07922382392826!3d-13.861805186242744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDUxJzQyLjUiUyA0MMKwMDQnNDUuMiJX!5e0!3m2!1spt-BR!2sbr!4v1627579821539!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <p>Estamos prontos para atender você</p>
+            </div>
+            <div class="contato-container">
+                <div class="contato-info">
+                    <div class="info-group">
+                        <h4 class="info-title">LOCALIZAÇÃO</h4>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Rua Francisco Alves Meira, Centro, em frente ao Ceavig. - Jequié - Ba</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h4 class="info-title">CONTATO DIRETO</h4>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p><a href="tel:+5573991560178" class="contact-highlight">(73) 99156-0178</a></p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p><a href="mailto:contato@imperiodasfraldas.com.br" class="contact-highlight">contato@imperiodasfraldas.com.br</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h4 class="info-title">HORÁRIO DE FUNCIONAMENTO</h4>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Seg. a Sex. das 8h às 18h | Sábado: 8h às 12h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/imperiodasfraldasj" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/5573991560178" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/LOGO - IMPERIO DAS FRALDAS 4.jpg" alt="Império das Fraldas">
+                    <p>Tudo para o conforto do seu bebê</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#localizacao">Localização</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/imperiodasfraldasj" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Receba Novidades</h4>
+                    <form>
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="submit">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Império das Fraldas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão de WhatsApp Fixo -->
+    <a href="https://wa.me/5573991117478" class="whatsapp-btn" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>Fale Conosco</span>
+    </a>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
