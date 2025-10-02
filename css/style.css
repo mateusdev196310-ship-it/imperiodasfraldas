@@ -1012,11 +1012,17 @@ footer {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
 }
 
 .footer-bottom p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
+}
+
+.developer-credits {
+    position: absolute;
+    right: 0;
 }
 
 /* Responsividade */
@@ -1055,6 +1061,10 @@ footer {
     .sobre-ilustracao {
         margin-top: 2rem;
     }
+}
+
+.mobile-break {
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -1112,6 +1122,27 @@ footer {
         width: 25px;
         height: 35px;
     }
+    
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+    }
+    
+    .hero-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .mobile-break {
+        display: inline;
+    }
+}
 }
 
 @media (max-width: 576px) {
@@ -1126,6 +1157,9 @@ footer {
 
     .btn {
         width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .footer-newsletter form {
@@ -1154,13 +1188,82 @@ footer {
         grid-template-columns: 1fr;
     }
     
-    .hero {
-        padding-top: 6rem;
+    .whatsapp-btn {
+        padding: 10px 15px;
+        font-size: 14px;
+        width: auto;
     }
     
-    .logo img {
-        height: 50px;
+    .contato-info p {
+        word-break: break-word;
+        text-align: center;
+        font-size: 14px;
     }
+    
+    .contato-info .info-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .contato-info .info-item i {
+        margin-bottom: 8px;
+        font-size: 24px;
+    }
+    
+    .contato-info .info-group {
+        margin-bottom: 25px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contato-info .info-title {
+        margin-bottom: 15px;
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    .contato-info a.contact-highlight {
+        display: inline-block;
+        padding: 5px 0;
+        font-size: 14px;
+    }
+    
+    .social-media {
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    .mobile-break {
+        display: inline;
+    }
+    
+    .developer-credits {
+        position: static;
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .footer-bottom p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.hero {
+    padding-top: 6rem;
+}
+    
+.logo img {
+    height: 50px;
 }
 
 /* Elementos Lúdicos */
