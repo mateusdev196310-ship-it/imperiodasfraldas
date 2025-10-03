@@ -867,6 +867,35 @@ nav ul li a:hover {
     display: block;
 }
 
+/* Grid de mapas (Matriz e Filial) */
+.mapas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .mapas-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.map-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+}
+
+.map-card h3 {
+    color: var(--dark-gray);
+    margin-bottom: 0.75rem;
+}
+
+.map-actions {
+    margin-top: 1rem;
+}
+
 .contato-container {
     width: 100%;
     max-width: 800px;
