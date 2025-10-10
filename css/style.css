@@ -52,9 +52,9 @@ h3 {
     font-size: 1.5rem;
 }
 
-p {
+/* p {
     margin-bottom: 1rem;
-}
+} */
 
 a {
     text-decoration: none;
@@ -1256,7 +1256,6 @@ footer {
         display: inline;
     }
 }
-}
 
 @media (max-width: 576px) {
     .section-header h2 {
@@ -1544,4 +1543,86 @@ footer {
 @keyframes confetti-animation {
     0% { background-position: 0 0; }
     100% { background-position: 300px 300px; }
+}
+
+
+.info-group .info-item a {
+    text-decoration: none;
+    align-items: center;
+}
+
+/* Estilo do "botão" unificado de rede social */
+.elegant-social-button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+    width: fit-content;
+    margin: 0; /* centraliza dentro do .info-item # Não está mais centrlizado*/
+}
+
+.elegant-social-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Estilo do texto abaixo do ícone */
+.elegant-social-button p {
+    transition: color 0.2s ease;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding-inline: 5px;
+    margin-left: -5px;
+}
+
+/* Herdar o estilo do ícone do seu CSS existente, mas garantir alinhamento */
+.info-item .social-media {
+    margin: 0;
+    justify-content: left;
+}
+
+/* Hover harmônico: aplicar efeito no ícone E no texto */
+.elegant-social-button:hover .social-media a,
+.elegant-social-button:hover .social-media i {
+    transform: none; /* evita conflito com seu transform */
+}
+
+/* Hover harmônico: aplicar efeito no ícone E no texto */
+.elegant-social-button[href*="instagram"]:hover .social-media a,
+.elegant-social-button[href*="instagram"]:hover .social-media i {
+    transform: none; /* evita conflito com seu transform */
+    color: #ffffff;
+    background-color: #e1306c;
+}
+
+/* Hover harmônico: aplicar efeito no ícone E no texto */
+.elegant-social-button[href*="wa.me"]:hover .social-media a,
+.elegant-social-button[href*="wa.me"]:hover .social-media i {
+    transform: none; /* evita conflito com seu transform */
+    color: #ffffff;
+    background-color: #25D366;
+}
+
+/* Cores específicas no hover (opcional, mas elegante) */
+.elegant-social-button[href*="instagram"]:hover p {
+    color: #ffffff;
+    background-color: #e1306c;
+    border-radius: 12px;
+}
+
+.elegant-social-button[href*="wa.me"]:hover p {
+    color: #ffffff;
+    background-color: #25D366;
+    border-radius: 12px;
+
+}
+
+/* Se quiser que o texto também "suba" levemente junto com o ícone */
+.elegant-social-button:hover p {
+    transform: translateY(-3px);
+    color: #ffffff;
+    background-color: #8ca8e6; /*royal: #1a56db*/
+    border-radius: 12px;
 }
