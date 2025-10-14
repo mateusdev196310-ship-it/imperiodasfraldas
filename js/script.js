@@ -204,3 +204,47 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 });
+
+// Slideshow de imagens no Hero (fundo em tela cheia)
+document.addEventListener('DOMContentLoaded', function () {
+  const imgEl = document.getElementById('hero-slideshow');
+  const blurEl = document.querySelector('.hero-blur');
+  if (!imgEl) return;
+
+  // Usar apenas arquivos que existem na pasta img/img_loja
+  const slides = [
+    'img/img_loja/fachada.jpg',
+    'img/img_loja/balcao.jpg',
+    'img/img_loja/loja_fraldas.jpg',
+    'img/img_loja/higiene.jpg',
+    'img/img_loja/variados.jpg',
+    'img/img_loja/fraldas2.jpg',
+    'img/img_loja/fraldas_diversas.jpg',
+    'img/img_loja/fraldas_diversas2.jpg',
+    'img/img_loja/fraldas_estante.jpg',
+    'img/img_loja/shampoos.jpg'
+  ];
+
+  let idx = 0;
+  const preloader = new Image();
+
+  const change = () => {
+    idx = (idx + 1) % slides.length;
+    const nextSrc = slides[idx];
+
+    // Pré-carrega a próxima imagem para evitar período sem imagem
+    preloader.onload = () => {
+      // Troca direto sem fade para não haver momento invisível
+      imgEl.src = nextSrc;
+      if (blurEl) blurEl.src = nextSrc;
+    };
+    preloader.onerror = () => {
+      // Se a próxima imagem falhar, pula para a seguinte
+      change();
+    };
+    preloader.src = nextSrc;
+  };
+
+  // troca a cada 6 segundos (mais tempo para leitura)
+  setInterval(change, 6000);
+});
