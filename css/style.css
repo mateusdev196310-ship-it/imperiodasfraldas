@@ -707,11 +707,12 @@ nav ul li a:hover {
 }
 
 .whatsapp-btn i {
-    font-size: 24px;
+    font-size: 34px;
     margin-right: 8px;
 }
 
 .whatsapp-btn span {
+    font-size: 24px;
     font-weight: 700;
     font-family: var(--font-bubbly);
 }
@@ -720,6 +721,7 @@ nav ul li a:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
     background-color: #20ba5a;
+    color: #D4D4D4;
 }
 
 @media (max-width: 576px) {
@@ -729,13 +731,14 @@ nav ul li a:hover {
     
     .whatsapp-btn {
         width: 60px;
-        height: 60px;
+        height: 72px;
         border-radius: 50%;
         justify-content: center;
         padding: 0;
     }
     
     .whatsapp-btn i {
+        font-size: 50px;
         margin-right: 0;
     }
 }
@@ -1031,8 +1034,8 @@ nav ul li a:hover {
 }
 
 .info-item a.contact-highlight {
-    font-size: 1.1rem;
-    font-weight: 700;
+    /* font-size: 1.1rem;
+    font-weight: 700; */
 }
 
 .info-item a:hover {
@@ -1412,9 +1415,9 @@ footer {
     }
     
     .contato-info a.contact-highlight {
-        display: inline-block;
+        /* display: inline-block;
         padding: 5px 0;
-        font-size: 14px;
+        font-size: 14px; */
     }
     
     .social-media {
@@ -1439,6 +1442,10 @@ footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .contato-info {
+        padding: 0.25rem; /* ou 16px, 20px, etc. */
     }
 }
 
@@ -1673,6 +1680,14 @@ footer {
     background-color: #25D366;
 }
 
+/* Hover harmônico: aplicar efeito no ícone E no texto */
+.elegant-social-button[href*="facebook"]:hover .social-media a,
+.elegant-social-button[href*="facebook"]:hover .social-media i {
+    transform: none; /* evita conflito com seu transform */
+    color: #ffffff;
+    background-color: #0866ff;
+}
+
 /* Cores específicas no hover (opcional, mas elegante) */
 .elegant-social-button[href*="instagram"]:hover p {
     color: #ffffff;
@@ -1683,6 +1698,13 @@ footer {
 .elegant-social-button[href*="wa.me"]:hover p {
     color: #ffffff;
     background-color: #25D366;
+    border-radius: 12px;
+
+}
+
+.elegant-social-button[href*="facebook"]:hover p {
+    color: #ffffff;
+    background-color: #0866ff;
     border-radius: 12px;
 
 }
