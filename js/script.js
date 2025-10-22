@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!imgEl) return;
 
   // Usar apenas arquivos que existem na pasta img/img_loja
-  const slides = [
+  /*const slides = [
     'img/img_loja/fachada.jpg',
     'img/img_loja/balcao.jpg',
     'img/img_loja/loja_fraldas.jpg',
@@ -223,6 +223,14 @@ document.addEventListener('DOMContentLoaded', function () {
     'img/img_loja/fraldas_diversas2.jpg',
     'img/img_loja/fraldas_estante.jpg',
     'img/img_loja/shampoos.jpg'
+  ];*/
+
+  const slides = [
+    'img/apresentacao/Imagem_16(1600x975).jpeg',
+    'img/apresentacao/Imagem_11(1600x974).jpeg',
+    'img/apresentacao/Imagem_6.jpeg',
+    'img/apresentacao/Imagem_2.jpeg',
+    'img/apresentacao/Imagem_9.jpeg'
   ];
 
   let idx = 0;

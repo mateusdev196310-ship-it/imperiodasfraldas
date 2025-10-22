@@ -140,7 +140,7 @@ a:hover {
 /* Divisórias entre seções */
 section {
     position: relative;
-    padding: 100px 0;
+    /* padding: 100px 0; */
     margin-bottom: 30px;
 }
 
@@ -186,7 +186,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 0.8rem 0;
+    /* padding: 0.8rem 0; */
     backdrop-filter: saturate(1.2) blur(3px);
 }
 
@@ -249,7 +249,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    padding: 10rem 0 6rem;
+    /* padding: 10rem 0 6rem; */
     background-color: var(--light-gray);
     position: relative;
     overflow: hidden;
@@ -289,7 +289,7 @@ nav ul li a:hover {
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
 
 .buttons {
@@ -313,16 +313,16 @@ nav ul li a:hover {
 .hero {
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 82vh;
     display: flex;
     align-items: center;
-    margin-top: 95px; /* compensa header fixo */
+    /*margin-top: 95px;*/ /* compensa header fixo */
 }
 .hero .container {
     position: relative;
     z-index: 2;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    /* padding-top: 3rem;
+    padding-bottom: 3rem; */
 }
 .hero-bg {
     position: absolute;
@@ -358,13 +358,13 @@ nav ul li a:hover {
 
 /* Melhorar legibilidade do texto e visibilidade dos botões no hero */
 .hero-content h1, .hero-content p {
-    text-shadow: 0 2px 6px rgba(0,0,0,0.55), 0 0 6px rgba(255,255,255,0.35);
+    /* text-shadow: 0 2px 6px rgba(0,0,0,0.55), 0 0 6px rgba(255,255,255,0.35); */
 }
 .hero-content p {
     color: #ffffff;
 }
 .hero-content h1 span {
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6), 0 0 6px rgba(255,255,255,0.45);
+    /* text-shadow: 0 2px 6px rgba(0,0,0,0.6), 0 0 6px rgba(255,255,255,0.45); */
 }
 .hero .btn-outline {
     color: #fff;
@@ -567,6 +567,7 @@ nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
+    padding-bottom: 75px;
 }
 
 .produto-item {
@@ -1221,7 +1222,7 @@ footer {
 
     .hero-content {
         padding-right: 0;
-        margin-bottom: 3rem;
+        /* margin-bottom: 3rem; */
     }
 
     .buttons {
@@ -1269,7 +1270,7 @@ footer {
 
     nav {
         position: fixed;
-        top: 80px;
+        top: 71px; /* Era 80px */
         left: -100%;
         width: 100%;
         height: calc(100vh - 80px);
@@ -1457,7 +1458,7 @@ footer {
 }
 
 .hero {
-    padding-top: 10rem;
+    /* padding-top: 10rem; */
 }
     
 .logo img {
@@ -1786,4 +1787,69 @@ footer {
     /* .observacao-endereco {
         margin-left: 0;
     } */
+}
+
+.container-section-1 {
+    display: flex; 
+    flex-direction: row;
+    column-gap: 2%;
+    align-items: center; 
+    width: 100%;
+    height: 650px; 
+    margin-top: 90px;
+    object-fit: cover; 
+    object-position: center; 
+    overflow: hidden; 
+    padding: 2%;
+}
+
+.sub-container-titulo {
+    background-color: #99b7ef;
+    /* height: 70%; */
+    border-radius: 15px;
+    align-items: center;
+    width: 35%;
+    padding: 5px;
+}
+
+.sub-container-fotos {
+    display: flex; 
+    flex-direction: row; 
+    width:65%; 
+    height: 600px;
+    justify-content: center;
+    /* align-items: center; */ /*Se ativa isso a foto fica com zoom*/
+    border-radius: 10px; 
+    overflow: hidden;
+    background-color: #99b7ef;
+}
+
+@media(max-width: 768px) {
+    .container-section-1 {
+        margin-top: 65px;    
+    }  
+}
+
+@media(max-width: 750px) {
+    .container-section-1 {
+        /* flex-direction: column; */
+        row-gap: 5px;
+        flex-wrap: wrap-reverse;
+        justify-content: center; 
+    }
+
+    .sub-container-fotos {
+        width:100%;
+        height: 430px;    
+    }
+
+    .sub-container-titulo {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sub-container-titulo .container .hero-content {
+        display: flex;
+        align-items: center;
+    }
 }
