@@ -206,53 +206,97 @@ window.addEventListener('scroll', function() {
 });
 
 // Slideshow de imagens no Hero (fundo em tela cheia)
-document.addEventListener('DOMContentLoaded', function () {
-  const imgEl = document.getElementById('hero-slideshow');
-  const blurEl = document.querySelector('.hero-blur');
-  if (!imgEl) return;
+window.addEventListener('DOMContentLoaded', () => {
+  const currentEl = document.getElementById('hero-slideshow-current');
+  const nextEl = document.getElementById('hero-slideshow-next');
+  if (!currentEl || !nextEl) return;
 
-  // Usar apenas arquivos que existem na pasta img/img_loja
-  /*const slides = [
-    'img/img_loja/fachada.jpg',
-    'img/img_loja/balcao.jpg',
-    'img/img_loja/loja_fraldas.jpg',
-    'img/img_loja/higiene.jpg',
-    'img/img_loja/variados.jpg',
-    'img/img_loja/fraldas2.jpg',
-    'img/img_loja/fraldas_diversas.jpg',
-    'img/img_loja/fraldas_diversas2.jpg',
-    'img/img_loja/fraldas_estante.jpg',
-    'img/img_loja/shampoos.jpg'
-  ];*/
-
-  const slides = [
-    'img/apresentacao/Imagem_16(1600x975).jpeg',
-    'img/apresentacao/Imagem_11(1600x974).jpeg',
-    'img/apresentacao/Imagem_6.jpeg',
-    'img/apresentacao/Imagem_2.jpeg',
-    'img/apresentacao/Imagem_9.jpeg'
+  const isMobile = window.innerWidth <= 750;
+  // Novas fotos em apresentacao, começando pela fachada
+  const slidesDesktop = [
+    'img/apresentacao/fachada.jpeg',
+    'img/apresentacao/absorventes.jpeg',
+    'img/apresentacao/fraldas_e_lencos.jpeg',
+    'img/apresentacao/mamadeira.jpeg',
+    'img/apresentacao/shampoos.jpeg',
   ];
+  const slidesMobile = [
+    'img/apresentacao/fachada.jpeg',
+    'img/apresentacao/absorventes.jpeg',
+    'img/apresentacao/fraldas_e_lencos.jpeg',
+    'img/apresentacao/mamadeira.jpeg',
+    'img/apresentacao/shampoos.jpeg',
+  ];
+  const slides = isMobile ? slidesMobile : slidesDesktop;
 
   let idx = 0;
-  const preloader = new Image();
+  currentEl.src = slides[idx];
 
-  const change = () => {
-    idx = (idx + 1) % slides.length;
-    const nextSrc = slides[idx];
+  // Classe de foco para fachada (porta de vidro e logo)
+  const setFocal = (el, src) => {
+    if (!el) return;
+    const isFachada = src && src.includes('fachada');
+    const isMamadeira = src && src.includes('mamadeira');
+    el.classList.toggle('focus-fachada', !!isFachada);
+    el.classList.toggle('focus-mamadeira', !!isMamadeira);
+  };
+  setFocal(currentEl, currentEl.src);
 
-    // Pré-carrega a próxima imagem para evitar período sem imagem
-    preloader.onload = () => {
-      // Troca direto sem fade para não haver momento invisível
-      imgEl.src = nextSrc;
-      if (blurEl) blurEl.src = nextSrc;
-    };
-    preloader.onerror = () => {
-      // Se a próxima imagem falhar, pula para a seguinte
-      change();
-    };
-    preloader.src = nextSrc;
+  // No mobile, escondemos a segunda camada para evitar animação de "folha"
+  if (isMobile) {
+    nextEl.style.display = 'none';
+  }
+
+  // Pré-carregamento simples
+  const preload = (src) => new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(src);
+    img.onerror = reject;
+    img.src = src;
+  });
+
+  // Passo com animação (desktop)
+  const step = async () => {
+    const nextIdx = (idx + 1) % slides.length;
+    try {
+      const src = await preload(slides[nextIdx]);
+      nextEl.src = src;
+      setFocal(nextEl, src);
+      // garantir empilhamento consistente: atual por cima, próxima abaixo
+      nextEl.style.zIndex = 1;
+      currentEl.style.zIndex = 2;
+
+      currentEl.classList.add('sheet-anim');
+      currentEl.addEventListener('animationend', () => {
+        currentEl.classList.remove('sheet-anim');
+        const tempSrc = currentEl.src;
+        currentEl.src = nextEl.src;
+        setFocal(currentEl, currentEl.src);
+        nextEl.src = tempSrc;
+        setFocal(nextEl, nextEl.src);
+        idx = nextIdx;
+        // manter empilhamento após troca
+        nextEl.style.zIndex = 1;
+        currentEl.style.zIndex = 2;
+      }, { once: true });
+    } catch (e) {
+      idx = nextIdx;
+    }
   };
 
-  // troca a cada 6 segundos (mais tempo para leitura)
-  setInterval(change, 6000);
+  // Passo simples (mobile) sem animação
+  const stepMobile = async () => {
+    const nextIdx = (idx + 1) % slides.length;
+    try {
+      const src = await preload(slides[nextIdx]);
+      currentEl.src = src;
+      setFocal(currentEl, src);
+      idx = nextIdx;
+    } catch (e) {
+      idx = nextIdx;
+    }
+  };
+
+  // Intervalo será ajustado mais abaixo para usar stepMobile no mobile
+  setInterval(isMobile ? stepMobile : step, 6000);
 });
