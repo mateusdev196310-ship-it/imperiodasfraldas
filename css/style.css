@@ -1017,7 +1017,7 @@ nav ul li a:hover {
 
 .info-item {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     margin-bottom: 20px;
     text-align: left;
 }
@@ -1405,9 +1405,10 @@ footer {
     .contato-info .info-item {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        /* align-items: center; */
         text-align: center;
         margin-bottom: 15px;
+        margin-left: 8%;
     }
     
     .contato-info .info-item i {
