@@ -214,14 +214,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const isMobile = window.innerWidth <= 750;
   // Novas fotos em apresentacao, começando pela fachada
   const slidesDesktop = [
-    'img/apresentacao/fachada.jpeg',
+    'img/apresentacao/fachada_sem_numero.jpeg',
     'img/apresentacao/absorventes.jpeg',
     'img/apresentacao/fraldas_e_lencos.jpeg',
     'img/apresentacao/mamadeira.jpeg',
     'img/apresentacao/shampoos.jpeg',
   ];
   const slidesMobile = [
-    'img/apresentacao/fachada.jpeg',
+    'img/apresentacao/fachada_sem_numero.jpeg',
     'img/apresentacao/absorventes.jpeg',
     'img/apresentacao/fraldas_e_lencos.jpeg',
     'img/apresentacao/mamadeira.jpeg',
