@@ -448,252 +448,100 @@ nav ul li a:hover {
     }
 }
 
-/* Catálogo de Produtos com Abas */
-.catalogo-tabs {
-    margin-top: 2rem;
-}
-
-.tabs-container {
-    display: flex;
+/* Grid de Categorias (Novo Design) */
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 3rem;
     justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
 }
 
-.tab-btn {
+.categoria-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 2px solid var(--light-gray);
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.75rem 1rem;
-    background-color: var(--light-gray);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    font-family: var(--font-bubbly);
-    color: var(--dark-gray);
-    min-width: 110px;
+    justify-content: center;
+    height: 100%;
 }
 
-.tab-btn i {
-    font-size: 1.5rem;
-    margin-bottom: 0.35rem;
-    color: var(--royal-blue);
-}
-
-.tab-btn span {
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.tab-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
-
-.tab-btn.active {
-    background-color: var(--royal-blue);
-    color: var(--white);
-}
-
-.tab-btn.active i {
-    color: var(--white);
-}
-
-.tab-content {
-    position: relative;
-    min-height: 300px;
-}
-
-.tab-pane {
-    display: none;
-    animation: fadeIn 0.5s ease forwards;
-}
-
-.tab-pane.active {
-    display: block;
-}
-
-/* Grupos de categoria (Infantil, Geriátrica, Higiene) */
-.categoria-grupo {
-    margin-bottom: 2.5rem;
-    padding: 1.5rem;
-    background: var(--white);
-    border: 1px solid var(--light-gray);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-}
-
-.categoria-grupo h4 {
-    color: var(--royal-blue);
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
-}
-
-/* Lista de marcas como chips */
-.marca-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.marca-list li {
-    background: var(--baby-blue);
-    color: var(--royal-blue);
-    padding: 0.35rem 0.6rem;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    border: 1px solid var(--light-blue);
-}
-
-/* Ícones dentro da imagem do produto (para Higiene) */
-.produto-img i {
-    font-size: 2.2rem;
-    color: var(--royal-blue);
-}
-
-@media (max-width: 768px) {
-    .categoria-grupo {
-        padding: 1.2rem;
-        margin-bottom: 2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .marca-list {
-        justify-content: center;
-    }
-}
-
-.produtos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    padding-bottom: 75px;
-}
-
-.produto-item {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    padding: 2.4rem; /* aumenta área do retângulo */
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid var(--light-gray);
-}
-
-.produto-item:hover {
+.categoria-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-color: var(--royal-blue);
 }
 
-.produto-img {
-    margin-bottom: 1.8rem; /* pequeno respiro extra antes do título */
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    height: 190px; /* aumenta a área reservada da imagem */
+.categoria-card .icon-wrapper {
+    background-color: var(--light-gray);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.produto-img img {
-    width: auto;
-    max-width: 100%;
-    height: 100%;
-    object-fit: contain; /* garante que imagens com proporções diferentes não distorçam */
+    margin-bottom: 1.5rem;
     transition: var(--transition);
 }
 
-.produto-item:hover .produto-img img {
-    transform: scale(1.05);
-}
-
-.produto-item h4 {
-    color: var(--royal-blue);
-    margin-bottom: 0.8rem;
-    font-size: 1.3rem;
-    line-height: 1.3;
-    min-height: 1.6rem; /* reserva espaço uniforme para alinhar títulos */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.produto-item.animated {
-    animation: fadeIn 0.5s ease forwards;
-}
-
-.produto-item p {
-    color: var(--dark-gray);
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.4;
-    min-height: 1.6rem; /* reserva espaço para alinhar descrições no mesmo nível */
-}
-
-.btn-produto {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--baby-blue);
-    color: var(--royal-blue);
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.btn-produto:hover {
+.categoria-card:hover .icon-wrapper {
     background-color: var(--royal-blue);
+}
+
+.categoria-card i {
+    font-size: 3.5rem;
+    color: var(--royal-blue);
+    transition: var(--transition);
+}
+
+.categoria-card:hover i {
     color: var(--white);
 }
 
-/* Responsividade para o catálogo */
+.categoria-card h3 {
+    color: var(--royal-blue);
+    font-size: 1.8rem;
+    margin: 0;
+    font-family: var(--font-bubbly);
+}
+
+/* Responsividade para o grid de categorias */
 @media (max-width: 768px) {
-    .tabs-container {
-        gap: 0.5rem;
-    }
-    
-    .tab-btn {
-        padding: 0.8rem 1rem;
-        min-width: 100px;
-    }
-    
-    .produtos-grid {
+    .categorias-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
+        gap: 1.5rem;
+    }
+    
+    .categoria-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .categoria-card .icon-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .categoria-card i {
+        font-size: 2.5rem;
+    }
+
+    .categoria-card h3 {
+        font-size: 1.4rem;
     }
 }
 
 @media (max-width: 576px) {
-    .tabs-container {
-        flex-wrap: wrap;
-        overflow: visible;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .tab-btn {
-        min-width: 95px;
-        padding: 0.6rem 0.8rem;
-    }
-    
-    .produtos-grid {
+    .categorias-grid {
         grid-template-columns: 1fr;
+        max-width: 350px;
+        margin: 0 auto;
     }
 }
 
@@ -1881,6 +1729,12 @@ footer {
       /* Ajuste horizontal privilegiando área da porta e logo */
       object-position: 86% center;
   }
+  /* Foco especial para a fachada 2 (imp 2): garantir que apareça inteira (logo e parte de baixo) */
+   .sub-container-fotos img.focus-fachada2 {
+       object-fit: contain;
+       object-position: center center;
+       background-color: #9bbdf5; /* Fundo suave para preencher espaços vazios */
+   }
   .sheet-anim {
      animation: sheetSlideUp 1100ms ease-in-out forwards;
      filter: drop-shadow(0 12px 18px rgba(0,0,0,0.18));

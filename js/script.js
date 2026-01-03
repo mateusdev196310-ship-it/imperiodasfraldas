@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Adicionar classes de animação aos elementos
-    const animateElements = document.querySelectorAll('.categoria, .destaque-item, .valor');
+    const animateElements = document.querySelectorAll('.categoria-card, .destaque-item, .valor');
     animateElements.forEach((element, index) => {
         element.classList.add('fade-in');
         element.classList.add(`delay-${(index % 4) + 1}`);
@@ -47,61 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.categoria, .destaque-item, .valor').forEach(element => {
+    document.querySelectorAll('.categoria-card, .destaque-item, .valor').forEach(element => {
         observer.observe(element);
     });
-    
-    // Funcionalidade de troca de abas
-    const initTabs = function() {
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabPanes = document.querySelectorAll('.tab-pane');
-        
-        if (tabButtons.length > 0) {
-            // Ativar a primeira aba por padrão
-            tabButtons[0].classList.add('active');
-            if (tabPanes[0]) {
-                tabPanes[0].classList.add('active');
-            }
-            
-            // Adicionar evento de clique para cada botão de aba
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remover classe ativa de todos os botões
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Adicionar classe ativa ao botão clicado
-                    this.classList.add('active');
-                    
-                    // Mostrar o conteúdo da aba correspondente
-                    const targetTab = this.getAttribute('data-tab');
-                    
-                    // Esconder todos os painéis de abas
-                    tabPanes.forEach(pane => pane.classList.remove('active'));
-                    
-                    // Mostrar o painel da aba selecionada
-                    const activePane = document.querySelector(`#${targetTab}`);
-                    if (activePane) {
-                        activePane.classList.add('active');
-                    }
-                    
-                    // Adicionar efeito de animação aos produtos
-                    const produtos = activePane.querySelectorAll('.produto-item');
-                    produtos.forEach((produto, index) => {
-                        produto.style.animationDelay = `${index * 0.1}s`;
-                        produto.classList.add('animated');
-                        
-                        // Remover a classe após a animação
-                        setTimeout(() => {
-                            produto.classList.remove('animated');
-                        }, 1000);
-                    });
-                });
-            });
-        }
-    };
-    
-    // Inicializar as abas
-    initTabs();
 
     // Adicionar elementos visuais lúdicos
     addBalloons();
@@ -219,6 +167,10 @@ window.addEventListener('DOMContentLoaded', () => {
     'img/apresentacao/fraldas_e_lencos.jpeg',
     'img/apresentacao/mamadeira.jpeg',
     'img/apresentacao/shampoos.jpeg',
+    'img/apresentacao/fachada_imp_2.jpg',
+    'img/apresentacao/fraldas_centro.jpg',
+    'img/apresentacao/mamadeiras_centro.jpg',
+    'img/apresentacao/shampoos_centro.jpg',
   ];
   const slidesMobile = [
     'img/apresentacao/fachada_sem_numero.jpeg',
@@ -226,6 +178,10 @@ window.addEventListener('DOMContentLoaded', () => {
     'img/apresentacao/fraldas_e_lencos.jpeg',
     'img/apresentacao/mamadeira.jpeg',
     'img/apresentacao/shampoos.jpeg',
+    'img/apresentacao/fachada_imp_2.jpg',
+    'img/apresentacao/fraldas_centro.jpg',
+    'img/apresentacao/mamadeiras_centro.jpg',
+    'img/apresentacao/shampoos_centro.jpg',
   ];
   const slides = isMobile ? slidesMobile : slidesDesktop;
 
@@ -235,9 +191,13 @@ window.addEventListener('DOMContentLoaded', () => {
   // Classe de foco para fachada (porta de vidro e logo)
   const setFocal = (el, src) => {
     if (!el) return;
-    const isFachada = src && src.includes('fachada');
+    // Aplicar foco especial apenas para a fachada original (fachada_sem_numero) que precisa de ajuste à direita
+    const isFachada = src && src.includes('fachada_sem_numero');
+    // Aplicar foco especial para fachada 2 (imp 2) que precisa aparecer inteira
+    const isFachada2 = src && src.includes('fachada_imp_2');
     const isMamadeira = src && src.includes('mamadeira');
     el.classList.toggle('focus-fachada', !!isFachada);
+    el.classList.toggle('focus-fachada2', !!isFachada2);
     el.classList.toggle('focus-mamadeira', !!isMamadeira);
   };
   setFocal(currentEl, currentEl.src);
