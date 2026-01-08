@@ -1729,12 +1729,12 @@ footer {
       /* Ajuste horizontal privilegiando área da porta e logo */
       object-position: 86% center;
   }
-  /* Foco especial para a fachada 2 (imp 2): garantir que apareça inteira (logo e parte de baixo) */
-   .sub-container-fotos img.focus-fachada2 {
-       object-fit: contain;
-       object-position: center center;
-       background-color: #9bbdf5; /* Fundo suave para preencher espaços vazios */
-   }
+  /* Ajuste específico para a nova fachada corrigida */
+.sub-container-fotos img.focus-fachada-nova {
+    object-fit: cover;
+    object-position: center center;
+    /* Sem background color, usando cover normal como pedido */
+}
   .sheet-anim {
      animation: sheetSlideUp 1100ms ease-in-out forwards;
      filter: drop-shadow(0 12px 18px rgba(0,0,0,0.18));

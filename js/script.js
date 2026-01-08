@@ -167,7 +167,7 @@ window.addEventListener('DOMContentLoaded', () => {
     'img/apresentacao/fraldas_e_lencos.jpeg',
     'img/apresentacao/mamadeira.jpeg',
     'img/apresentacao/shampoos.jpeg',
-    'img/apresentacao/fachada_imp_2.jpg',
+    'img/apresentacao/fachada2_corrigida.png',
     'img/apresentacao/fraldas_centro.jpg',
     'img/apresentacao/mamadeiras_centro.jpg',
     'img/apresentacao/shampoos_centro.jpg',
@@ -178,7 +178,7 @@ window.addEventListener('DOMContentLoaded', () => {
     'img/apresentacao/fraldas_e_lencos.jpeg',
     'img/apresentacao/mamadeira.jpeg',
     'img/apresentacao/shampoos.jpeg',
-    'img/apresentacao/fachada_imp_2.jpg',
+    'img/apresentacao/fachada2_corrigida.png',
     'img/apresentacao/fraldas_centro.jpg',
     'img/apresentacao/mamadeiras_centro.jpg',
     'img/apresentacao/shampoos_centro.jpg',
@@ -193,11 +193,11 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!el) return;
     // Aplicar foco especial apenas para a fachada original (fachada_sem_numero) que precisa de ajuste à direita
     const isFachada = src && src.includes('fachada_sem_numero');
-    // Aplicar foco especial para fachada 2 (imp 2) que precisa aparecer inteira
-    const isFachada2 = src && src.includes('fachada_imp_2');
+    // Aplicar foco especial para fachada nova corrigida
+    const isFachadaNova = src && src.includes('fachada2_corrigida');
     const isMamadeira = src && src.includes('mamadeira');
     el.classList.toggle('focus-fachada', !!isFachada);
-    el.classList.toggle('focus-fachada2', !!isFachada2);
+    el.classList.toggle('focus-fachada-nova', !!isFachadaNova);
     el.classList.toggle('focus-mamadeira', !!isMamadeira);
   };
   setFocal(currentEl, currentEl.src);
